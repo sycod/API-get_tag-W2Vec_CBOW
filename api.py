@@ -175,5 +175,5 @@ st.write(
     "- Also note that the **model is trained for english language** input and may result in weird predictions in other cases."
 )
 st.write(
-    "- If model can't find any of the input words in trained data, it will display a no-suggestion message"
+    "- If model can't find any of the input words in trained data, it will display a 'no suggestion' message"
 )

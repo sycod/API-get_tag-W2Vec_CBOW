@@ -138,7 +138,7 @@ def predict_tags(input_clean, vectorizer, classifier) -> str:
     logging.info(f"X shape: {X_vect.shape}")
 
     if len(X_vect) < 1:
-        return "❌  aucune suggestion"
+        return "❌  no suggestion"
     else:
         lr_preds = lr_prediction(classifier, X_vect)
         predictions = str.join("  ", lr_preds)
