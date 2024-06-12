@@ -4,7 +4,6 @@ import os
 import dill as pickle
 import logging
 import streamlit as st
-import gensim
 from gensim.models import Word2Vec
 import nltk
 
@@ -99,6 +98,7 @@ def update_body():
 def click_button():
     """Actions to perform when button clicked"""
     user_input = st.session_state.title_input + "\n" + st.session_state.body_input
+    logging.info(f"\nUser input: {user_input}")
 
     # check user input length
     if not check_length(user_input):
@@ -110,6 +110,7 @@ def click_button():
         input_clean = preprocess_doc(
             user_input, st.session_state.keep_set, st.session_state.exclude_set
         )
+        logging.info(f"\nClean input: {input_clean}")
 
         # check preprocessed input length before predict
         if not check_length(input_clean):
@@ -121,13 +122,11 @@ def click_button():
         else:
             # predict tags
             predicted_tags = predict_tags(
-                user_input, st.session_state.vectorizer, st.session_state.classifier
+                input_clean, st.session_state.vectorizer, st.session_state.classifier
             )
             st.session_state.predicted_tags = predicted_tags
 
         # log infos
-        logging.info(f"\nUser input: {user_input}")
-        logging.info(f"\nClean input: {input_clean}")
         logging.info(f"\nPredicted tags: {st.session_state.predicted_tags}")
 
     return st.session_state.predicted_tags
@@ -174,4 +173,7 @@ st.markdown(
 )
 st.write(
     "- Also note that the **model is trained for english language** input and may result in weird predictions in other cases."
+)
+st.write(
+    "- If model can't find any of the input words in trained data, it will display a no-suggestion message"
 )
