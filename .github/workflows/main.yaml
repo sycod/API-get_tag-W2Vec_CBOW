@@ -24,20 +24,20 @@ jobs:
       - name: Lint files
         uses: devcontainers/ci@v0.3
         with:
-          configFile: .devcontainer/ghaction/devcontainer.json
+          configFile: .devcontainer/ghactions/devcontainer.json
           runCmd:
             make lint
 
       - name: Test packages
         uses: devcontainers/ci@v0.3
         with:
-          configFile: .devcontainer/ghaction/devcontainer.json
+          configFile: .devcontainer/ghactions/devcontainer.json
           runCmd:
             make test
 
       - name: Format files
         uses: devcontainers/ci@v0.3
         with:
-          configFile: .devcontainer/ghaction/devcontainer.json
+          configFile: .devcontainer/ghactions/devcontainer.json
           runCmd:
             make format
