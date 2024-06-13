@@ -12,6 +12,12 @@ from src.utils import lr_prediction
 from src.utils import predict_tags
 
 
+# NLTK downloads (just once, not downloaded if up-to-date)
+import nltk
+nltk.download("punkt", quiet=True)
+nltk.download("wordnet", quiet=True)
+
+
 # load necessary data
 VECTORIZER_URI = "models/w2v_cbow_vectorizer"
 CLASSIFIER_URI = "models/w2v_cbow_lrovr_classifier.pkl"
