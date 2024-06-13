@@ -168,7 +168,7 @@ else:
 st.divider()
 st.write("## ℹ️ TIPS")
 st.markdown(
-    """- preprocessing discards many **frequent and usual words** plus **HTML tags** and **code snippets** from user sentences and may result to a too small final input.  
+    """- Preprocessing discards many **frequent and usual words** plus **HTML tags** and **code snippets** from user sentences and may result to a too small final input.  
     An error message can thus be displayed."""
 )
 st.write(
@@ -177,6 +177,7 @@ st.write(
 st.write(
     "- If model can't find any of the input words in trained data, it will display a 'no suggestion' message"
 )
-st.write(
-    "- If you see the main page reloading at each run, your browser doesn't allow the 'session state' management. Try using a less secure browser, such as Chrome which doesn't split storage and network states between websites"
+st.markdown(
+    """- If you see the main page reloading at each run, your browser doesn't allow the 'session state' management.  
+    Try using a less secure browser, such as Chrome which doesn't split storage and network states between websites"""
 )
