@@ -28,21 +28,11 @@
       "apt_update": "sudo apt update && sudo apt -y upgrade",
       "venv_create": "python -m venv ~/.env",
     },
+    "updateContentCommand": {
+        "apt_update": "sudo apt update && sudo apt -y upgrade",
+        "pip_inst_reqs": "~/.env/bin/pip3 install --upgrade pip && ~/.env/bin/pip3 install -r requirements.txt && echo '✅ Packages installed and Requirements met'",
+      },
     "postCreateCommand": {
       "bashrc_update": "chmod +x ./.devcontainer/bashrc_update.sh && ./.devcontainer/bashrc_update.sh",
     },
-    // streamlit content:
-    "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
-    "postAttachCommand": {
-      "server": "streamlit run api.py --server.enableCORS false --server.enableXsrfProtection false"
-    },
-    "portsAttributes": {
-      "8501": {
-        "label": "Application",
-        "onAutoForward": "openPreview"
-      }
-    },
-    "forwardPorts": [
-      8501
-    ]
   }

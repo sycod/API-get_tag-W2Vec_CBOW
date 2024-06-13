@@ -17,23 +17,27 @@ jobs:
       - name: Build and install dev container
         uses: devcontainers/ci@v0.3
         with:
+          devcontainerPath: .devcontainer/ghaction_devcontainer.json
           runCmd:
             make install
             
       - name: Lint files
         uses: devcontainers/ci@v0.3
         with:
+          devcontainerPath: .devcontainer/ghaction_devcontainer.json
           runCmd:
             make lint
 
       - name: Test packages
         uses: devcontainers/ci@v0.3
         with:
+          devcontainerPath: .devcontainer/ghaction_devcontainer.json
           runCmd:
             make test
 
       - name: Format files
         uses: devcontainers/ci@v0.3
         with:
+          devcontainerPath: .devcontainer/ghaction_devcontainer.json
           runCmd:
             make format
