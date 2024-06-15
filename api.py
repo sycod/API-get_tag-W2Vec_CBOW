@@ -140,7 +140,7 @@ st.set_page_config(
 )
 st.write("# Tags prediction")
 st.write(
-    "Predict 5 tags from a StackOverflow-like question title and / or body) fields:"
+    "Predict 5 tags from a StackOverflow-like question title and / or body fields:"
 )
 
 # user input
