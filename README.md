@@ -3,12 +3,9 @@ title: Get tag
 emoji: 🏷️
 app_file: api.py
 license: MIT
-URL: get-tag.streamlit.app
 ---
 
 [![Build, install, lint, test and format](https://github.com/sycod/get_tag/actions/workflows/main.yaml/badge.svg)](https://github.com/sycod/get_tag/actions/workflows/main.yaml)
-
-# [➡️ App available in production here ⬅️](https://get-tag.streamlit.app)
 
 # What for?
 
